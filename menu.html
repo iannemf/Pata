@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Definindo o conjunto de caracteres e a escala inicial -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título da página -->
+    <title>Instituição Patas Felizes</title>
+    <link rel="shortcut icon" href="imgLogos/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+</head>
+<body onload="slide1()">
+
+    <header class="header">
+        <nav>
+            <img class="logo" src="imgLogos/Dog.png" alt="Logo da Instituição de Adoção">
+            
+            <div class="nav" id="nav">
+                <a href="#home">Página Inicial</a>
+                <a href="#animais">Quero adotar</a>
+                <a href="cadastrarAnimal">Cadastrar Animal</a>
+                <a href="#quero-adotar">Como ajudar</a>
+                <a href="#contato">Contato</a>
+            </div>
+            
+            <button class="login" onclick="login()">Logar</button>  
+            <button class="cadastrar" onclick="cadastrar()">Cadastrar</button>
+        </nav>
+    </header><br>
+    
+
+    <div id="carrosel">
+        <img src="./imgCarrosel/prevenc.jpg" alt="slide show" id="banner" />
+      </div>
+
+    <h1 class="title-lg">Encontre seu novo amigo</h1>
+
+    <br>
+    <main class="Pesquisar">
+        <div class="tituloLogo">
+        
+        </div>
+        <div>
+        <select class="especie" name="especie"><option value>Todas as espécies</option>
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+        </select>
+        </div>
+
+        <div class="sexo">
+        <select id="sex" name="sex"><option value>Todos os sexos</option>
+            <option value="macho">Macho</option>
+            <option value="femea">Fêmea</option>
+        </select>
+        </div>
+
+        <div class="Portes">
+        <select id="portes" name="porte"><option value>Todos os portes</option>>
+            <option value="pequeno">Porte pequeno</option>
+            <option value="medio">Porte médio</option><option value="grande">Porte grande</option>
+        </select>
+        </div>
+
+        
+        
+        <div class="button-buscar">
+        <button class="buscar" type="submit">Buscar</button>
+        </div>
+    </main>
+
+        <div class="custom-rect">
+            <div class="image-container">
+                <figure class="rounded float-start">
+                    <img src="imgPets/dog1.jpg" alt="Imagem de um cachorro" />
+                    <figcaption class="figure-card">Paçoca</figcaption>
+                </figure>
+            
+                
+                <figure class="rounded float-start">
+                    <img src="imgPets/2.png" alt="Imagem de outro cachorro" />
+                    <figcaption class="figure-card">Kira</figcaption>
+                </figure>
+
+                <figure class="rounded float-start">
+                    <img src="imgPets/3.png" alt="Imagem de outro cachorro" />
+                    <figcaption class="figure-card">Kira</figcaption>
+                </figure>
+
+                <figure class="rounded float-start">
+                    <img src="imgPets/4.png" alt="Imagem de outro cachorro" />
+                    <figcaption class="figure-card">Kira</figcaption>
+                </figure>
+
+                <figure class="rounded float-start">
+                    <img src="imgPets/5.png" alt="Imagem de outro cachorro" />
+                    <figcaption class="figure-card">Kira</figcaption>
+                </figure>
+
+                <figure class="rounded float-start">
+                    <img src="imgPets/6.png" alt="Imagem de outro cachorro" />
+                    <figcaption class="figure-card">Kira</figcaption>
+                </figure>
+
+                <figure class="rounded float-start">
+                    <img src="imgPets/7.png" alt="Imagem de outro cachorro" />
+                    <figcaption class="figure-card">Kira</figcaption>
+                </figure>
+
+                <figure class="rounded float-start">
+                    <img src="imgPets/8.png" alt="Imagem de outro cachorro" />
+                    <figcaption class="figure-card">Kira</figcaption>
+                </figure>
+
+                <figure class="rounded float-start">
+                    <img src="imgPets/9.png" alt="Imagem de outro cachorro" />
+                    <figcaption class="figure-card">Kira</figcaption>
+                </figure>
+
+                <figure class="rounded float-start">
+                    <img src="imgPets/10.png" alt="Imagem de outro cachorro" />
+                    <figcaption class="figure-card">Kira</figcaption>
+                </figure>
+            </div>
+        </div>
+        
+        <script src="inicial.js"></script>
+        <script src="carrosel.js"></script>
+</body>
+</html>

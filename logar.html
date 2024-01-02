@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Login</title>
+
+  <!-- Adicione as bibliotecas necessárias -->
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+
+  <script>
+    // Função para manipular a resposta das credenciais
+    function handleCredentialResponse(response) {
+      const data = jwt_decode(response.credential);
+
+      // Atualize os elementos da página com as informações do usuário
+      document.getElementById("fullName").textContent = data.name;
+      document.getElementById("sub").textContent = data.sub;
+      document.getElementById("given_name").textContent = data.given_name;
+      document.getElementById("family_name").textContent = data.family_name;
+      document.getElementById("email").textContent = data.email;
+      document.getElementById("verifiedEmail").textContent = data.email_verified;
+      document.getElementById("picture").setAttribute("src", data.picture);
+    }
+
+    // Função para inicializar o botão e lidar com o evento de clique
+    function initializeGoogleSignInButton() {
+      google.accounts.id.initialize({
+        client_id: "67420322129-qkt7le7tkgp5j1h42bitcn5qmht6j53h.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+      });
+
+      google.accounts.id.renderButton(
+        document.getElementById("buttonDiv"),
+        { 
+          theme: "outline", 
+          size: "large",
+          type: "standard",
+          shape: "pill",
+          text: "continue_with",
+          logo_alignment: "left"
+        }
+      );
+
+      google.accounts.id.prompt(); // também exibe o diálogo One Tap
+    }
+
+    // Chame a função de inicialização quando a página estiver carregada
+    window.onload = function () {
+      initializeGoogleSignInButton();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div id="buttonDiv"></div>
+
+    <!-- Adicione parágrafos para exibir as informações do usuário -->
+    <p id="fullName"></p>
+    <p id="sub"></p>
+    <p id="given_name"></p>
+    <p id="family_name"></p>
+    <p id="email"></p>
+    <p id="verifiedEmail"></p>
+    
+    <!-- Adicione uma imagem para exibir a foto do perfil do usuário -->
+    <img id="picture" alt="User Picture" />
+  </div>
+</body>
+</html>
